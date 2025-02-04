@@ -1,0 +1,7 @@
+#home{
+    background-color: var(--main-color);
+}
+.home-title{
+    padding: 100px;
+    color: var(--font-primary-color);
+}

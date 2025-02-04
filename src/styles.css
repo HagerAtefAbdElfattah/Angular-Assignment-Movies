@@ -1,1 +1,49 @@
-/* You can add global styles to this file, and also import other style files */
+:root{
+    --main-color:#e6b4df;
+    --primary-color:#bd5dc2 ;
+    --secondary-color:#2c3e50 ;
+
+    --font-primary-color: #5c0852;
+    --font-secondary-color: #ffffff;
+}
+
+
+@font-face {
+    font-family: "Smooch Sans";
+    src:url("./../public/fonts/Smooch_Sans/static/SmoochSans-ExtraBold.ttf");
+    font-style: italic;
+}
+@font-face {
+    font-family: "Crimson Text";
+    src:url("/fonts/Crimson_Text/CrimsonText-Regular.ttf");
+    font-weight: normal;
+}
+@font-face {
+    font-family: "Crimson Text-Bold";
+    src:url("/fonts/Crimson_Text/CrimsonText-Bold.ttf");
+    font-weight: bold;
+}
+@font-face {
+    font-family: "Caveat";
+    src: url("/fonts/Caveat/Caveat-VariableFont_wght.ttf");
+    font-weight: normal;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Crimson Text";
+}
+
+h1{
+    font-size: 50px;
+    font-family: 'smooch sans';
+}
+
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+

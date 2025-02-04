@@ -1,0 +1,15 @@
+section .navbar{
+    background-color: var(--primary-color);
+    color: var(--font-primary-color);
+    text-transform: capitalize;
+}
+
+.container-fluid .navbar-brand{
+    color: var(--font-primary-color);
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.custom-active{
+    background-color: var(--secondary-color);
+    color: var(--font-secondary-color);
+}
