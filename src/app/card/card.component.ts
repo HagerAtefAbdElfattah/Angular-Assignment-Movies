@@ -1,6 +1,7 @@
 import { MoviesService } from './../movies.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Movie } from '../movie';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-card',
@@ -8,10 +9,12 @@ import { Movie } from '../movie';
   templateUrl: './card.component.html',
   styleUrl: './card.component.css'
 })
-export class CardComponent implements OnInit {
+export class CardComponent implements OnInit, OnDestroy {
   baseMovieUrl:string='https://image.tmdb.org/t/p/original'
 
   moviesList:Movie[]=[]
+
+  $sub:Subscription = new Subscription()
 
   constructor(private MoviesService:MoviesService) { }
 
@@ -19,12 +22,8 @@ export class CardComponent implements OnInit {
     this.getMovies();
   }
 
-  ngOnDestroy(): void {
-    
-  }
-
   getMovies(){
-    this.MoviesService.getMoviesService().subscribe({
+    this.$sub = this.MoviesService.getMoviesService().subscribe({
       next:(res)=>{
         this.moviesList=res.results
       },error:(err)=>{  
@@ -33,4 +32,7 @@ export class CardComponent implements OnInit {
     })
   }
 
+  ngOnDestroy(): void {
+    this.$sub.unsubscribe()
+  }
 }
